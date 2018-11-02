@@ -6,7 +6,7 @@ Our Story: We have a general story we would like to tell: what makes an Amazon r
 
 Our Motivation: We've all seen Amazon listings that are plagued with unhelpful reviews. And our personal experience tells us that we are very unlikely to buy a product that has no reviews, or only has unhelpful reviews. Because of this, a helpful review can push us to make a purchase when we are on the fence. Our dataset includes images, prices, other purchases, and product information. We believe that we can use this information to draw strong conclusions about what 'makes' a review helpful.
 
-## Research questions
+## Research Questions
 
 There are a few easier questions that we can answer just by looking at the dataset:
 - What words are associated with a useful review?
@@ -29,7 +29,7 @@ There are a few ways that we could start to clean the data
 - Standardize punctuation.
 - Standardize capitalization.
 
-## A list of internal milestones up until project milestone 2
+## Internal Deadlines For Milestone 2
 
 ### By November 9
 
