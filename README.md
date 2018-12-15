@@ -87,5 +87,7 @@ We have tried using the pytorch library on the cluster, but didn't manage to int
 
 ## Milestone 3
 Yuliana: data cleaning, data analysis, hypothesis formulation and testing, calculating final results
+
 Jon: downloading data with Spark, generating graphs and tables, typing up the report
+
 Julian: linear regression, presentation
