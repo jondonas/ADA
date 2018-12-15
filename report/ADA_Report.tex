@@ -181,11 +181,11 @@ Using Complement Naive Bayes did not always give our predictor an improvement, w
 \hline
 Automotive & \shortstack[l]{false: 0.53 \\ true: 0.79 \\ weighted: 0.73} & \shortstack[l]{false: 0.53 \\ true: 0.79 \\ weighted: 0.73} \\
 \hline
-Baby & \shortstack[l]{false: 0.53 \\ true: 0.79 \\ weighted: 0.73} & \shortstack[l]{false: 0.53 \\ true: 0.79 \\ weighted: 0.73} \\
+Baby & \shortstack[l]{false: 0.53 \\ true: 0.73 \\ weighted: 0.66} & \shortstack[l]{false: 0.53 \\ true: 0.79 \\ weighted: 0.70} \\
 \hline
-Beauty & \shortstack[l]{false: 0.53 \\ true: 0.79 \\ weighted: 0.73} & \shortstack[l]{false: 0.53 \\ true: 0.79 \\ weighted: 0.73} \\
+Beauty & \shortstack[l]{false: 0.47 \\ true: 0.75 \\ weighted: 0.67} & \shortstack[l]{false: 0.46 \\ true: 0.76 \\ weighted: 0.67} \\
 \hline
-Electronics & \shortstack[l]{false: 0.53 \\ true: 0.79 \\ weighted: 0.73} & \shortstack[l]{false: 0.53 \\ true: 0.79 \\ weighted: 0.73} \\
+Electronics & \shortstack[l]{false: 0.60 \\ true: 0.72 \\ weighted: 0.68} & \shortstack[l]{false: 0.61 \\ true: 0.71 \\ weighted: 0.68} \\
 \hline
 \end{tabular}
 \end{center}
@@ -199,9 +199,9 @@ Additionally, we were surprised that using a classifier trained on one product c
 \hline
 & Beauty w/ beauty classifier & Auto w/ auto classifier & Auto w/ beauty classifier \\
 \hline
-Precision (False) & 0.52 & 0.53 & 0.43 \\
+Precision (False) & 0.47 & 0.53 & 0.45 \\
 \hline
-Precision (True) & 0.74 & 0.79 & 0.76 \\
+Precision (True) & 0.75 & 0.79 & 0.75 \\
 \hline
 Precision (weighted average) & 0.67 & 0.73 & 0.68 \\ 
 \hline
@@ -209,13 +209,13 @@ Precision (weighted average) & 0.67 & 0.73 & 0.68 \\
 \end{center}
 \vspace*{10px}
 
-Next, we decided to try to fix the imbalance in the data. We needed to create a data-set that sampled many more unhelpful reviews, because so far, the ratio of helpful to unhelpful was 3:17. To create this modified data-set, we used the Books category reviews. We removed the middle tier reviews, and focused on the extremes. We took reviews that scored 0-20\%, or 99-100\% helpfulness. Finally, one of our hypotheses was confirmed, and we got much better results. We got an accuracy of 89\% for unhelpful reviews, and 78\% for helpful reviews. It is now much easier to identify an unhelpful review, which is the opposite of the case when we include all of the data - even though the number of helpful reviews still outweighed the unhelpful. This shows us that we can get a much higher accuracy for all of the categories if we train our classifiers on balanced data. It is also much easier to classify reviews at the extremes, for obvious reasons. 
+Next, we decided to try to fix the imbalance in the data. We needed to create a data-set that sampled many more unhelpful reviews, because so far, the ratio of helpful to unhelpful was 3:17. To create this modified data-set, we used the Books category reviews. We removed the middle tier reviews, and focused on the extremes. We took reviews that scored 0-20\%, or 99-100\% helpfulness. Finally, one of our hypotheses was confirmed, and we got much better results. We got an accuracy of 89\% for unhelpful reviews, and 76\% for helpful reviews. It is now much easier to identify an unhelpful review, which is the opposite of the case when we include all of the data - even though the number of helpful reviews still outweighed the unhelpful. This shows us that we can get a much higher accuracy for all of the categories if we train our classifiers on balanced data. It is also much easier to classify reviews at the extremes, for obvious reasons. 
 
 \section{Conclusion}
 
 Our initial data-set had a much higher number of helpful reviews than unhelpful reviews. This means that the model is more biased towards useful reviews compared to useless ones.
 
-Although our model was biased towards helpful reviews, it was relatively accurate with its predictions and achieved an accuracy of up to 80\% on the helpful reviews in some test sets. However, it was not good at classifying unhelpful reviews, with an accuracy of up to 60\%. Our results were much better when we used under-sampling to achieve a balance in the Books data-set so that the classifier would be better able to detect unhelpful reviews. 
+Although our model was biased towards helpful reviews, it was relatively accurate with its predictions and achieved an accuracy of up to 79\% on the helpful reviews in some test sets. However, it was not good at classifying unhelpful reviews, with an accuracy of up to 60\%. Our results were much better when we used under-sampling to achieve a balance in the Books data-set so that the classifier would be better able to detect unhelpful reviews. 
 
 With fairly simple models, we can do a good job of automatically predicting whether an amazon review is helpful or not. Additional research can be done to utilize the length, date, and star rating of reviews to improve the classifier. 
 
