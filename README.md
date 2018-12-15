@@ -33,25 +33,6 @@ There are a few ways that we can clean the data:
 - Remove non-unicode (or invalid) characters
 - Detect and remove reviews that are not in English
 
-### Internal Deadlines For Milestone 2
-
-#### By November 9
-
-- Figure out how to display and load the data in the cluster
-- Research what needs to be done to standardize and clean the data
-- Look for the best libraries and tools to help us with our goal
-
-#### By November 16
-
-- Divide responsibilities for the project
-- Cleanup and standardize the dataset
-
-#### By November 25
-
-- Prepare the notebook for the deadline
-- Answer some of the easier questions that we have outlined earlier
-- Set future deadlines and add addional questions to answer
-
 ### Questions for TAs
 1. What obstacles do you anticipate we'll encounter?
 2. Are there any technologies you would recommend for this specific project?
