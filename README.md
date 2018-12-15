@@ -1,33 +1,5 @@
 # Can we promote useful reviews faster?
 
-## Milestone 2 Update
-
-### Questions to answer:
-
-#### Can we handle the data in its size?
-- We're able to run preliminary sql queries, on the entire dataset, in 1-2 minutes. And basic serial machine-learning models in about 3h. Using models that can be trained using multithreading, this duration should be considerably reduced. 
-
-#### Do we understand what’s in the data (formats, distributions, missing values, correlations, etc)?
-- Yes, the data is actually very simple as there are few numerical features. Basically we're interested in the text-content of a review and the associated numerical score.
-
-#### Have we considered ways to enrich, filter, and transform the data according to our needs?
-- We have converted categorical columns into numerical representations. But as we didn't use this preprocessing in the code for milestone 2, it is removed from the notebook.
-- The main preprocessing is to transform the reviews' text-content into a format suitable for machine-learning. Because of technical limitations due to spark, we used the classic TF-IDF for now, but we plan to use Glove embeddings as soon as we figured out how.
-- We have also created queries that filter our spark dataframes to only include X-Core products. X-Core products have at least X reviews associated with them. This will allow us to focus on a smaller and higher quality subset of the data because for the customers' vote to be representative, there needs to be enough reviews. (a low quality review is more helpful when it is the sole review available, this biases the helpfulness score).
-
-
-#### Have we updated our plan in a reasonable way, reflecting our improved knowledge after data acquaintance? 
-Yes, we dramatically reduced the scope of our project, following the advice that was given in milestone 1.
-
-#### In particular, how does our data suit our project needs? 
-Data perfectly suits our project needs because we have enough reviews with text content and helpfulness rating. 
-
-#### What methods are we going to use? Essential mathematical details in the notebook.
-We will use Glove embeddings to create features and then machine-learning to predict the helpfulness score based on these features.
-
-#### Is our plan for analysis and communication reasonable and sound? What alternatives have we considered but dropped.
-We have tried using the pytorch library on the cluster, but didn't manage to integrate it with spark. So our fallback was to try the simpler models implemented in the `spark.ml` library instead. We have discovered several promising libraries such as `spark nlp` that we plan to use in the next coming weeks to create more complex models.
-
 ## Milestone 1
 
 ### Abstract
@@ -84,3 +56,36 @@ There are a few ways that we can clean the data:
 1. What obstacles do you anticipate we'll encounter?
 2. Are there any technologies you would recommend for this specific project?
 3. Is our scope realistic?
+
+## Milestone 2
+
+### Questions to answer:
+
+#### Can we handle the data in its size?
+- We're able to run preliminary sql queries, on the entire dataset, in 1-2 minutes. And basic serial machine-learning models in about 3h. Using models that can be trained using multithreading, this duration should be considerably reduced. 
+
+#### Do we understand what’s in the data (formats, distributions, missing values, correlations, etc)?
+- Yes, the data is actually very simple as there are few numerical features. Basically we're interested in the text-content of a review and the associated numerical score.
+
+#### Have we considered ways to enrich, filter, and transform the data according to our needs?
+- We have converted categorical columns into numerical representations. But as we didn't use this preprocessing in the code for milestone 2, it is removed from the notebook.
+- The main preprocessing is to transform the reviews' text-content into a format suitable for machine-learning. Because of technical limitations due to spark, we used the classic TF-IDF for now, but we plan to use Glove embeddings as soon as we figured out how.
+- We have also created queries that filter our spark dataframes to only include X-Core products. X-Core products have at least X reviews associated with them. This will allow us to focus on a smaller and higher quality subset of the data because for the customers' vote to be representative, there needs to be enough reviews. (a low quality review is more helpful when it is the sole review available, this biases the helpfulness score).
+
+#### Have we updated our plan in a reasonable way, reflecting our improved knowledge after data acquaintance? 
+Yes, we dramatically reduced the scope of our project, following the advice that was given in milestone 1.
+
+#### In particular, how does our data suit our project needs? 
+Data perfectly suits our project needs because we have enough reviews with text content and helpfulness rating. 
+
+#### What methods are we going to use? Essential mathematical details in the notebook.
+We will use Glove embeddings to create features and then machine-learning to predict the helpfulness score based on these features.
+
+#### Is our plan for analysis and communication reasonable and sound? What alternatives have we considered but dropped.
+We have tried using the pytorch library on the cluster, but didn't manage to integrate it with spark. So our fallback was to try the simpler models implemented in the `spark.ml` library instead. We have discovered several promising libraries such as `spark nlp` that we plan to use in the next coming weeks to create more complex models.
+
+
+## Milestone 3
+Yuliana: data cleaning, data analysis, hypothesis formulation and testing, calculating final results
+Jon: downloading data with Spark, generating graphs and tables, typing up the report
+Julian: linear regression, presentation
